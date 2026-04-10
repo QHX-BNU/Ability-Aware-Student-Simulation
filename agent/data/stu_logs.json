@@ -1,0 +1,245 @@
+[
+    {
+        "user_id": 1,
+        "logs": [
+            {
+                "exer_id": 197,
+                "knowledge_code": [
+                    81
+                ],
+                "score": 1,
+                "exer_content": "What operation(s) can a transaction perform if this transaction acquires an exclusive\r\nlock?\n(A) Read\n(B) Write\n(C) Read and write\n(D) Update",
+                "exer_answer": "C",
+                "know_name": [
+                    "Transactions"
+                ]
+            },
+            {
+                "exer_id": 198,
+                "knowledge_code": [
+                    86
+                ],
+                "score": 1,
+                "exer_content": "For the two-phase locking protocol, which of the following statements is true?\n(A) Once a transaction has released a lock, this transaction can not acquire any more locks\n(B) A transaction can release all its locks when this transaction commits\n(C) A transaction can acquire all the locks which it needs when this transaction begins\n(D) All of the above",
+                "exer_answer": "D",
+                "know_name": [
+                    "Two-Phase Locking (2PL) Protocol"
+                ]
+            },
+            {
+                "exer_id": 199,
+                "knowledge_code": [
+                    85
+                ],
+                "score": 1,
+                "exer_content": "Which of the following problems occurs when a transaction re-reads a table and\r\nfinds new rows that were inserted into a table by other transactions since its prior read?\n(A) Unrepeatable read\n(B) Phantom read\n(C) Dirty read\n(D) Lost update",
+                "exer_answer": "B",
+                "know_name": [
+                    "Concurrent Transactions"
+                ]
+            },
+            {
+                "exer_id": 200,
+                "knowledge_code": [
+                    85
+                ],
+                "score": 1,
+                "exer_content": "Which of the following are the advantages of concurrent transactions?\n(A) Increase throughput\n(B) Reduce average response time\n(C) Increase utilisation\n(D) All of the above",
+                "exer_answer": "D",
+                "know_name": [
+                    "Concurrent Transactions"
+                ]
+            },
+            {
+                "exer_id": 201,
+                "knowledge_code": [
+                    87
+                ],
+                "score": 1,
+                "exer_content": "Which properties are ensured by the transaction manager through logging?\n(A) Atomicity and integrity\n(B) Atomicity and durability\n(C) Atomicity and isolation\n(D) Durability and isolation",
+                "exer_answer": "B",
+                "know_name": [
+                    "Logging"
+                ]
+            },
+            {
+                "exer_id": 202,
+                "knowledge_code": [
+                    88,
+                    85
+                ],
+                "score": 1,
+                "exer_content": "Consider two transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/> , and the following schedule in which A and B are two records.<br>\r\n<br>\r\n<center><table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td> write(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n <tr>\r\n    <td> </td>\r\n    <td> read(A) </td>\r\n  </tr>\r\n<tr>\r\n    <td> </td>\r\n    <td> write(A) </td>\r\n  </tr>\r\n<tr>\r\n    <td> read(B) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td> commit </td>\r\n  </tr>\r\n<tr>\r\n    <td> abort  </td>\r\n    <td> </td>\r\n  </tr>\r\n</table></center>\r\n<br>\r\nWhich of the following problems may occur in this schedule?\n(A) Lost update\n(B) Dirty read\n(C) Unrepeatable read\n(D) Phantom read",
+                "exer_answer": "B",
+                "know_name": [
+                    "The Dirty Read Problem",
+                    "Concurrent Transactions"
+                ]
+            },
+            {
+                "exer_id": 203,
+                "knowledge_code": [
+                    89,
+                    85
+                ],
+                "score": 1,
+                "exer_content": "Consider two transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/>, and the following schedule in which A and B are two records.<br>\r\n<br>\r\n<center><table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(B) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td>  </td>\r\n    <td> read(A)</td>\r\n  </tr>\r\n <tr>\r\n    <td> </td>\r\n    <td> write(A) </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td> read(A) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td> read(B)</td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>write(B) </td>\r\n  </tr>\r\n<tr>\r\n    <td>commit  </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>Abort  </td>\r\n  </tr>\r\n</table></center>\r\n<br>\r\nWhich of the following problems may occur in this schedule?\n(A) Lost update\n(B) Phantom read\n(C) Dirty read\n(D) Unrepeatable read",
+                "exer_answer": "D",
+                "know_name": [
+                    "The Unrepeatable Read Problem",
+                    "Concurrent Transactions"
+                ]
+            },
+            {
+                "exer_id": 204,
+                "knowledge_code": [
+                    90,
+                    85
+                ],
+                "score": 1,
+                "exer_content": "Consider two transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/>, and the following schedule in which A and B are two records.<br>\r\n<br>\r\n<center><table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td>  </td>\r\n    <td> read(A)</td>\r\n  </tr>\r\n <tr>\r\n    <td> </td>\r\n    <td> write(A) </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td> read(B) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td> write(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n\r\n    <td>commit  </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>commit  </td>\r\n  </tr>\r\n</table></center>\r\n<br>\r\nWhich of the following problems may occur in this schedule?\n(A) Lost update\n(B) Dirty read\n(C) Unrepeatable read\n(D) Phantom read",
+                "exer_answer": "A",
+                "know_name": [
+                    "The Lost Update Problem",
+                    "Concurrent Transactions"
+                ]
+            },
+            {
+                "exer_id": 205,
+                "knowledge_code": [
+                    83,
+                    93
+                ],
+                "score": 1,
+                "exer_content": "Consider the table Worker(name, payrate, hours) with name as the primary key and the\r\nfollowing two concurrent transactions:<br>\r\n<br>\r\n<img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/>:<br>\r\n<br>\r\nBegin Transaction;<br>\r\nupdate Worker set payrate = 1.2*payrate where name = ‘Tom';<br>\r\nupdate Worker set payrate = 1.5*payrate where name = ‘Tom';<br>\r\nCommit;<br>\r\n<br>\r\n<img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/>:<br>\r\n<br>\r\nBegin Transaction;<br>\r\nupdate Worker set payrate = payrate+20 where name = ‘Tom';<br>\r\nupdate Worker set payrate = payrate+10 where name = ‘Tom';<br>\r\nCommit;<br>\r\n<br>\r\nAssume Tom’s pay rate is 20 before the transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/> begin.<br>\r\n<br>\r\nIf the transaction isolation level is “serializable”, what are the possible values for Tom's\r\npay rate after executing these two transactions?\n(A) 66 and 82\n(B) 81 and 90\n(C) 66 and 90\n(D) None of the above",
+                "exer_answer": "C",
+                "know_name": [
+                    "Isolation",
+                    "Serializable"
+                ]
+            },
+            {
+                "exer_id": 206,
+                "knowledge_code": [
+                    81,
+                    83,
+                    92
+                ],
+                "score": 1,
+                "exer_content": "Consider the table Worker(name, payrate, hours) with name as the primary key and the\r\nfollowing two concurrent transactions:<br>\r\n<br>\r\n<img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/>:<br>\r\n<br>\r\nBegin Transaction;<br>\r\nupdate Worker set payrate = 1.2*payrate where name = ‘Tom';<br>\r\nupdate Worker set payrate = 1.5*payrate where name = ‘Tom';<br>\r\nCommit;<br>\r\n<br>\r\n<img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/>:<br>\r\n<br>\r\nBegin Transaction;<br>\r\nupdate Worker set payrate = payrate+20 where name = ‘Tom';<br>\r\nupdate Worker set payrate = payrate+10 where name = ‘Tom';<br>\r\nCommit;<br>\r\n<br>\r\nAssume Tom’s pay rate is 20 before the transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/> begin.<br>\r\n<br>\r\nIf the transaction isolation level is “read committed”, what are the possible values for\r\nTom’s pay rate after executing these two transactions?\n(A) 66 and 82\n(B) 81 and 90\n(C) 66 and 90\n(D) None of the above",
+                "exer_answer": "C",
+                "know_name": [
+                    "Transactions",
+                    "Isolation",
+                    "Read Committed"
+                ]
+            },
+            {
+                "exer_id": 207,
+                "knowledge_code": [
+                    91,
+                    83,
+                    92,
+                    93
+                ],
+                "score": 1,
+                "exer_content": "Consider the table Worker(name, payrate, hours) with name as the primary key and the\r\nfollowing two concurrent transactions:<br>\r\n<br>\r\n<img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/>:<br>\r\n<br>\r\nBegin Transaction;<br>\r\nupdate Worker set payrate = 1.2*payrate where name = ‘Tom';<br>\r\nupdate Worker set payrate = 1.5*payrate where name = ‘Tom';<br>\r\nCommit;<br>\r\n<br>\r\n<img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/>:<br>\r\n<br>\r\nBegin Transaction;<br>\r\nupdate Worker set payrate = payrate+20 where name = ‘Tom';<br>\r\nupdate Worker set payrate = payrate+10 where name = ‘Tom';<br>\r\nCommit;<br>\r\n<br>\r\nAssume Tom’s pay rate is 20 before the transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/> begin.<br>\r\n<br>\r\nIf the transaction isolation level is “read uncommitted”, what are the possible values\r\nfor Tom’s pay rate after executing these two transactions?\n(A) 66, 81, 82 and 90\n(B) 66, 76, 81, 82, 87, and 90\n(C) 66, 78, 81, 82, 88, and 90\n(D) 66 and 90\n(E) None of the above",
+                "exer_answer": "B",
+                "know_name": [
+                    "Read Uncommitted",
+                    "Isolation",
+                    "Read Committed",
+                    "Serializable"
+                ]
+            },
+            {
+                "exer_id": 208,
+                "knowledge_code": [
+                    81
+                ],
+                "score": 1,
+                "exer_content": "Consider the table Worker(name, payrate, hours) with name as the primary key and\r\nthe following transaction:<br>\r\n<br>\r\nBegin transaction;<br>\r\nupdate Worker set hours = 20 where name = ‘Tom';<br>\r\nupdate Worker set payrate = 1.5*payrate where name = ‘Tom';<br>\r\nCommit;<br>\r\nRollback;<br>\r\n<br>\r\nWhat does Rollback do?\n(A) Undo the changes before commit\n(B) Clear all changes\n(C) Redo the changes before commit\n(D) Nothing",
+                "exer_answer": "D",
+                "know_name": [
+                    "Transactions"
+                ]
+            },
+            {
+                "exer_id": 209,
+                "knowledge_code": [
+                    86
+                ],
+                "score": 1,
+                "exer_content": "Consider two transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/>, and the following schedules in which A and B are two records. Which of the following schedules can result in a deadlock?<br>\r\n<br>\r\n<html>\r\n<head>\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n<style>\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n.column {\r\n  float: left;\r\n  width: 20%;\r\n  padding: 10px;\r\n  height: 300px; \r\n}\r\n.row:after {\r\n  content: \"\";\r\n  display: table;\r\n  clear: both;\r\n}\r\n</style>\r\n</head>\r\n<body>\r\n<div class=\"row\"display= \"table\">\r\n  <div class=\"column\" >\r\n    <h2>1</h2>\r\n   <table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td> write(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n <tr>\r\n    <td> </td>\r\n    <td> read(A) </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td>  </td>\r\n    <td> write(A) </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>commit </td>\r\n  </tr>\r\n\r\n    <td>commit  </td>\r\n    <td> </td>\r\n  </tr>\r\n</table>\r\n  </div>\r\n  <div class=\"column\" >\r\n    <h2>2</h2>\r\n   <table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n<tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td>  </td>\r\n    <td> read(B)</td>\r\n  </tr>\r\n <tr>\r\n    <td> </td>\r\n    <td> write(A)</td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td> write(B) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>commit </td>\r\n  </tr>\r\n\r\n    <td>commit  </td>\r\n    <td> </td>\r\n  </tr>\r\n</table>\r\n  </div>\r\n<div class=\"column\" >\r\n    <h2>3</h2>\r\n   <table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td>  </td>\r\n    <td> write(B)</td>\r\n  </tr>\r\n <tr>\r\n    <td> </td>\r\n    <td> read(A) </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td> write(B) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td> commit</td>\r\n  </tr>\r\n\r\n    <td>commit  </td>\r\n    <td> </td>\r\n  </tr>\r\n</table>\r\n  </div>\r\n<div class=\"column\" >\r\n    <h2>4</h2>\r\n   <table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td>  </td>\r\n    <td> read(A)</td>\r\n  </tr>\r\n <tr>\r\n    <td> </td>\r\n    <td> write(A) </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td> write(B) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td> commit</td>\r\n  </tr>\r\n\r\n    <td>commit  </td>\r\n    <td> </td>\r\n  </tr>\r\n</table>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n\r\n\n(A) Schedule 1and Schedule 2\n(B) Schedule 2 and Schedule 3\n(C) Schedule 3 and Schedule 4\n(D) Schedule 1 and Schedule 4\n(E) Schedule 2 and Schedule 4",
+                "exer_answer": "E",
+                "know_name": [
+                    "Two-Phase Locking (2PL) Protocol"
+                ]
+            },
+            {
+                "exer_id": 210,
+                "knowledge_code": [
+                    91
+                ],
+                "score": 1,
+                "exer_content": "Consider the following two transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/>, which transfer money between\r\ndifferent accounts. If the transaction isolation level is “read uncommitted”, which of the\r\nfollowing schedules is not serializable?<br>\r\n<html>\r\n<head>\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n<style>\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n.column {\r\n  float: left;\r\n  width: 20%;\r\n  padding:9px;\r\n  height: 400px; \r\n}\r\n.row:after {\r\n  content: \"\";\r\n  display: table;\r\n  clear: both;\r\n}\r\n</style>\r\n</head>\r\n<body>\r\n<div class=\"row\"display= \"table\">\r\n  <div class=\"column\" >\r\n    <h2>1</h2>\r\n   <table style=\"padding: 20px;text-align: center;width: 90%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td> A=A-10</td>\r\n    <td> </td>\r\n  </tr>\r\n <tr>\r\n    <td> write(A)</td>\r\n    <td> </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td> read(B) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td> B=B+10 </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>write(B)  </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>commit  </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td> read(B)</td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>B=B-20 </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>write(B) </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>read(D) </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>D=D+20 </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>write(D) </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>commit </td>\r\n  </tr>\r\n</table>\r\n  </div>\r\n  <div class=\"column\" >\r\n    <h2>2</h2>\r\n<table style=\"padding: 20px;text-align: center;width: 90%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td> </td>\r\n    <td>read(B) </td>\r\n  </tr>\r\n <tr>\r\n    <td> A=A-10</td>\r\n    <td> </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td>  </td>\r\n    <td>  B=B-20</td>\r\n  </tr>\r\n<tr>\r\n    <td> write(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>write(B) </td>\r\n  </tr>\r\n<tr>\r\n    <td>read(B) </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td> read(D)</td>\r\n  </tr>\r\n<tr>\r\n    <td>  B=B+10</td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td> write(B) </td>\r\n    <td></td>\r\n  </tr>\r\n<tr>\r\n    <td> commit </td>\r\n    <td></td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>D=D+20 </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>write(D) </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>commit </td>\r\n  </tr>\r\n</table>\r\n  </div>\r\n<div class=\"column\" >\r\n    <h2>3</h2>\r\n   <table style=\"padding: 20px;text-align: center;width: 90%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> read(A) </td>\r\n    <td> </td>\r\n  </tr>\r\n  <tr>\r\n    <td>A=A-10 </td>\r\n    <td> </td>\r\n  </tr>\r\n <tr>\r\n    <td> </td>\r\n    <td>read(B) </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td>  write(A)</td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td> read(B) </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>B=B-20 </td>\r\n  </tr>\r\n<tr>\r\n    <td> </td>\r\n    <td> write(B)</td>\r\n  </tr>\r\n<tr>\r\n    <td>  B=B+10</td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>read(D) </td>\r\n  </tr>\r\n<tr>\r\n    <td> write(B) </td>\r\n    <td></td>\r\n  </tr>\r\n<tr>\r\n    <td> commit </td>\r\n    <td></td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>D=D+20 </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>write(D) </td>\r\n  </tr>\r\n<tr>\r\n    <td>  </td>\r\n    <td>commit </td>\r\n  </tr>\r\n</table>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>\r\n\n(A) None of 1, 2 and 3\n(B) Schedule 1\n(C) Schedule 2\n(D) Schedule 3",
+                "exer_answer": "D",
+                "know_name": [
+                    "Read Uncommitted"
+                ]
+            },
+            {
+                "exer_id": 211,
+                "knowledge_code": [
+                    87
+                ],
+                "score": 1,
+                "exer_content": "Consider two transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/> which are executed in the schedule below:<br>\r\n<br>\r\n<center><table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> </td>\r\n    <td> read(D)</td>\r\n  </tr>\r\n  <tr>\r\n    <td>  </td>\r\n    <td>write(D) </td>\r\n  </tr>\r\n <tr>\r\n    <td> read(A)</td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td> write(A)</td>\r\n    <td>  </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td>  </td>\r\n    <td> commit </td>\r\n  </tr>\r\n<tr>\r\n    <td> read(B) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td> write(B) </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td> abort </td>\r\n    <td> </td>\r\n  </tr>\r\n</table></center>\r\n<br>\r\nAfter executing abort from <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> , what will the transaction manager do?\n(A) Redo the operations that have not been committed, i.e., write(A) and write(B) from T1\n(B) Undo the operations that have not been committed, i.e., write(A) and write(B) from T1\n(C) Redo the operations that have not been committed, i.e., write(B) from T1\n(D) Undo the operations that have not been committed, i.e., write(B) from T1",
+                "exer_answer": "B",
+                "know_name": [
+                    "Logging"
+                ]
+            },
+            {
+                "exer_id": 212,
+                "knowledge_code": [
+                    81
+                ],
+                "score": 1,
+                "exer_content": "Consider two transactions <img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/> and <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/> which are executed in the schedule below:<br>\r\n<br>\r\n<center><table style=\"padding: 20px;text-align: center;width: 30%;\" border=\"1\">\r\n\r\n  <tr>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{1}\" border=\"0\"/></th>\r\n    <th><center><img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/></th>\r\n  </tr>\r\n  <tr>\r\n    <td> </td>\r\n    <td> read(D)</td>\r\n  </tr>\r\n  <tr>\r\n    <td>  </td>\r\n    <td>write(D) </td>\r\n  </tr>\r\n <tr>\r\n    <td> read(A)</td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td> write(A)</td>\r\n    <td>  </td>\r\n  </tr>\r\n\r\n<tr>\r\n    <td>  </td>\r\n    <td> commit </td>\r\n  </tr>\r\n<tr>\r\n    <td> read(B) </td>\r\n    <td>  </td>\r\n  </tr>\r\n<tr>\r\n    <td> write(B) </td>\r\n    <td> </td>\r\n  </tr>\r\n<tr>\r\n    <td> abort </td>\r\n    <td> </td>\r\n  </tr>\r\n</table></center>\r\n<br>\r\nIf the database server goes down right after executing commit from <img src=\"http://latex.codecogs.com/gif.latex?T_{2}\" border=\"0\"/>and no changes\r\nhave been written to disk yet, what will a transaction manager do after the database server\r\nis up later?\n(A) Redo the operations that have been committed, i.e., write(D) from T2 and write(A) from T1\n(B) Undo the operations that have been committed, i.e., write(D) from T2 and write(A) from T1\n(C) Redo the operations that have been committed, i.e., write(D) from T2\n(D) Undo the operations that have been committed, i.e., write(D) from T2",
+                "exer_answer": "C",
+                "know_name": [
+                    "Transactions"
+                ]
+            },
+            {
+                "exer_id": 193,
+                "knowledge_code": [
+                    82,
+                    83,
+                    84
+                ],
+                "score": 0,
+                "exer_content": "Which of the following is responsible for ensuring the property isolation of database\r\ntransactions?\n(A) Recover manager\n(B) Concurrency control\n(C) Storage manager\n(D) File manager",
+                "exer_answer": "B",
+                "know_name": [
+                    "ACID Properties",
+                    "Isolation",
+                    "Locking"
+                ]
+            },
+            {
+                "exer_id": 1,
+                "knowledge_code": [
+                    1
+                ],
+                "score": 0,
+                "exer_content": "A __________ is a collection of distinct elements.\r\n\r\n\r\n\n(A) Relation\n(B) Function\n(C) Set\n(D) Tuple",
+                "exer_answer": "C",
+                "know_name": [
+                    "Set"
+                ]
+            }
+        ]
+    }
+]

@@ -67,11 +67,12 @@ Our main contribution lies in **integrating these components into a unified expe
 
 ```bash
 .
-├── cdm/                   # Cognitive diagnosis models and training scripts
 ├── agent/                 # Code for LLM-based student simulation
-├── data/                  # Processed datasets / split files / configs
-├── evaluation/            # Evaluation and analysis code
-├── assets/                # Figures used in README
+├── assets/                # Figures and helper assets
+├── assign/                # Student↔LLM similarity & assignment
+├── cdm/                   # Cognitive diagnosis models and training scripts
+├── evaluation/            # Evaluation scripts
+├── scripts/               # Runnable helper scripts (grouping, extraction, etc.)
 └── README.md
 ````
 
@@ -84,8 +85,8 @@ We recommend using **Python 3.10+**.
 Clone the repository:
 
 ```bash
-git clone [your-repo-link]
-cd [your-repo-name]
+git clone https://github.com/QHX-BNU/Ability-Aware-Student-Simulation.git
+cd Ability-Aware-Student-Simulation
 ```
 
 Install dependencies:
@@ -118,31 +119,70 @@ data/
 
 ## Running Experiments
 
-### 1. Cognitive Diagnosis
+This repo follows an end-to-end pipeline:
 
-First, train the cognitive diagnosis model to estimate students’ latent knowledge states:
+### 1) Cognitive Diagnosis (CDM)
+
+You first need to prepare the CDM training data by converting your dataset into the required CSV format.
+See: `cdm/README.md`.
+
+Then train NeuralCD to obtain student embeddings:
 
 ```bash
 python cdm/train.py
 ```
 
-### 2. Student Simulation
+### 2) Ability Grouping (students)
 
-Then, run the LLM-based student simulation pipeline conditioned on the diagnosis results:
-
-```bash
-python agent/run_simulation.py
-```
-
-### 3. Evaluation
-
-Finally, evaluate the experimental results:
+Compute each student's ability from embeddings and select students per ability level.
+Script: `scripts/cal_stu_ablility.py`.
+Configuration and outputs are documented in: `scripts/README.md`.
 
 ```bash
-python evaluation/evaluate.py
+python scripts/cal_stu_ablility.py \
+  --emb-npy cdm/stu_embedding/student_emb.npy
 ```
 
-> Please replace the commands above with the actual scripts in your repository.
+### 3) LLM Assignment (student → LLM)
+
+Assign an LLM to each student based on cosine similarity between embeddings.
+Script: `assign/cal_sim.py`.
+Configuration is documented in: `assign/README.md`.
+
+```bash
+python assign/cal_sim.py
+```
+
+### 4) Run Simulation
+
+Run the agent-based student simulation.
+Entry script: `agent/code/main_simulation.py`.
+Configuration is documented in: `agent/README.md`.
+
+```bash
+python agent/code/main_simulation.py --preset router_cosine
+```
+
+### 5) Answer Extraction (merge_results.csv)
+
+Extract structured answers from simulation outputs and append them into a `merged_results.csv`.
+Script: `scripts/extra_ans.py` (you need to update `RESULT_DIR_OUTPUT_MAP` and `STU_LOGS_PATH` inside the script).
+See also: `scripts/README.md`.
+
+```bash
+python scripts/extra_ans.py
+```
+
+### 6) Evaluation
+
+- Ability-grouped evaluation: `evaluation/data.py`
+- Overall evaluation (no ability groups): `evaluation/overall.py`
+See: `evaluation/README.md`.
+
+```bash
+python evaluation/data.py --record-csv agent/code/router/merged_results.csv
+python evaluation/overall.py --record-csv agent/code/router/merged_results.csv
+```
 
 ---
 
@@ -175,11 +215,13 @@ We sincerely thank the authors of these projects for making their code publicly 
 If you find this repository useful, please cite our paper:
 
 ```bibtex
-@inproceedings{yourpaper2026,
-  title     = {[Paper Title]},
-  author    = {[Author 1] and [Author 2] and [Author 3]},
-  booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL)},
-  year      = {2026}
+@inproceedings{
+anonymous2026one,
+title={One {LLM} Does Not Simulate All Students: Ability-Aware Student Simulation via Cognitive Diagnosis Guided {LLM} Assignment},
+author={Anonymous},
+booktitle={The 64th Annual Meeting of the Association for Computational Linguistics},
+year={2026},
+url={https://openreview.net/forum?id=IfIRg71R61}
 }
 ```
 
@@ -187,5 +229,5 @@ If you find this repository useful, please cite our paper:
 
 ## Contact
 
-If you have any questions, please open an issue or contact the authors.
+If you have any questions, please open an issue or contact the authors at huixingq@mail.ustc.edu.cn.
 
