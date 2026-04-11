@@ -417,7 +417,7 @@ Check:
 
 - Whether `pandas` is installed
 - Whether `stu_llm_mapping.csv`, `model_id_map.csv`, and `model_api.csv` all exist
-- Whether `A_index`, `B_index`, and `model_name` can be matched correctly
+- Whether `stu_id`, `llm_id`, and `model_name` can be matched correctly
 
 ### 7.3 Local model cannot run
 
