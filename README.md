@@ -102,9 +102,6 @@ If your experiments require LLM APIs or local model services, please also config
 ## Data Preparation
 
 Please prepare a raw interaction dataset that contains (at minimum) the following fields:
-
-（中文说明：数据集至少需要包含学生ID、题目文本、题目ID、题目知识点、题目正确答案，以及学生答案是否正确。）
-
 * student ID
 * exercise/question ID
 * exercise/question text
@@ -113,8 +110,6 @@ Please prepare a raw interaction dataset that contains (at minimum) the followin
 * whether the student's answer is correct (e.g., 0/1)
 
 After preparing the raw dataset, you need to preprocess/convert it so that it matches the input formats required by this codebase. The required data formats for each stage (CDM training, simulation, evaluation) are introduced in the documentation below.
-
-（中文说明：准备好原始数据集后，需要自行处理使其符合格式；下文会介绍代码运行所需要的数据格式。）
 
 If the raw data cannot be released due to privacy or licensing restrictions, we recommend providing:
 
