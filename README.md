@@ -183,7 +183,6 @@ After preparing the raw dataset, you need to preprocess/convert it so that it ma
 
 After preparing the raw dataset, you need to preprocess/convert it so that it matches the input formats required by this codebase. The required data formats for each stage (CDM training, simulation, evaluation) are introduced in the documentation below.
 
->>>>>>> 5efa7267bde72100d24becf44d531fe41d208635
 If the raw data cannot be released due to privacy or licensing restrictions, we recommend providing:
 
 - Preprocessing scripts
