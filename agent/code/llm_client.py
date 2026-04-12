@@ -40,7 +40,8 @@ class LLMClient:
                 print(f"Attempt {retry + 1}")
                 response = self.client.chat.completions.create(
                     model=self.model,
-                    messages=messages
+                    messages=messages,
+                    temperature=0 # gpt5mini, defalut temperature = 1
                 )
                 return response.choices[0].message.content.strip()
 
