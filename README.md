@@ -157,8 +157,6 @@ If your experiments require LLM APIs or local model services, please configure t
 ### Required Data Fields
 
 Please prepare a raw interaction dataset that contains (at minimum) the following fields:
-<<<<<<< HEAD
-
 - Student ID
 - Exercise/question ID
 - Exercise/question text
