@@ -171,14 +171,6 @@ After preparing the raw dataset, you need to preprocess/convert it so that it ma
 
 ### Data Accessibility
 
-=======
-* student ID
-* exercise/question ID
-* exercise/question text
-* exercise/question knowledge concept(s)
-* ground-truth (correct) answer
-* whether the student's answer is correct (e.g., 0/1)
-
 After preparing the raw dataset, you need to preprocess/convert it so that it matches the input formats required by this codebase. The required data formats for each stage (CDM training, simulation, evaluation) are introduced in the documentation below.
 
 If the raw data cannot be released due to privacy or licensing restrictions, we recommend providing:
