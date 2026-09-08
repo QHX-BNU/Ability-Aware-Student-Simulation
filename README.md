@@ -313,13 +313,26 @@ We sincerely thank the authors of these projects for making their code publicly 
 If you find this repository useful, please cite our paper:
 
 ```bibtex
-@inproceedings{
-anonymous2026one,
-title={One {LLM} Does Not Simulate All Students: Ability-Aware Student Simulation via Cognitive Diagnosis Guided {LLM} Assignment},
-author={Anonymous},
-booktitle={The 64th Annual Meeting of the Association for Computational Linguistics},
-year={2026},
-url={https://openreview.net/forum?id=IfIRg71R61}
+@inproceedings{que-etal-2026-one,
+    title = "One {LLM} Does Not Simulate All Students: Ability-Aware Student Simulation via Cognitive Diagnosis Guided {LLM} Assignment",
+    author = "Que, Huixing  and
+      Liu, Qi  and
+      Gao, Weibo  and
+      Huang, Zhenya",
+    editor = "Liakata, Maria  and
+      Moreira, Viviane P.  and
+      Zhang, Jiajun  and
+      Jurgens, David",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2026",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.findings-acl.302/",
+    doi = "10.18653/v1/2026.findings-acl.302",
+    pages = "6067--6084",
+    ISBN = "979-8-89176-395-1",
+    abstract = "Large Language Models (LLMs) have become integral to personalized education systems, particularly in the realm of student behavior simulation. By predicting fine-grained learning behaviors, these simulations enable intelligent systems to provide tailored instructional support. However, most existing methods rely on a single high-capacity LLM to represent an entire population of diverse learners. In this work, we demonstrate that this ``one-size-fits-all'' approach induces a systematic ability-dependent bias, where high-capacity models tend to overestimate low-ability students while lower-capacity models underestimate high-ability ones. To mitigate this distortion, we propose an \textbf{ability-aware student simulation framework} that dynamically matches students with appropriate LLM backbones through cognitive alignment. We leverage Neural Cognitive Diagnosis (NeuralCD) to extract multidimensional cognitive profiles for both human students and LLM agents within a shared skill space, subsequently pairing each student with the most cognitively representative model. Extensive experiments demonstrate that our approach substantially reduces simulation bias and consistently outperforms single-model baselines across the entire proficiency spectrum. Our findings suggest that faithful behavior simulation necessitates the \textbf{alignment of model capacity with student ability}, establishing cognitive diagnosis as a principled mechanism for model assignment in educational AI."
 }
 ```
 
